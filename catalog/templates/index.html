@@ -1,32 +1,18 @@
 {% extends "base_generic.html" %}
 
 {% block content %}
-<h1>Local Library Home</h1>
-
-<p>Welcome to <em>LocalLibrary</em>, a very basic Django website developed as a <a href="https://developer.mozilla.org/en-US/docs/Learn/Server-side/Django/Tutorial_local_library_website">tutorial example</a> on the Mozilla Developer Network.</p>
-<p>The tutorial demonstrates how to create a Django skeleton website and application, define URL mappings, views (including Generic List and Detail Views), models and templates.</p>
-
-
-<h2>UML Models</h2>
-<p>An UML diagram of the site's Django model structure is shown below. </p>
-
-<div>
-{% load static %}
-<img src="{% static "images/local_library_model_uml.png" %}" alt="My image" style="width:555px;height:540px;"/>
-</div>  
+<div class="main-block-wrap">
+    <h1>Welcome to the LocalLibrary</h1>
+    <ul class="info-wrap">
+    <li class="icon-wrap"><i class="icon fas fa-book fa-2x"></i>{{ num_books }} books</li>
+    <li class="icon-wrap"><i class="icon far fa-bookmark fa-2x"></i>{{ num_instances }} copies</li>
+    <li class="icon-wrap"><i class="icon fas fa-bookmark fa-2x"></i>{{ num_instances_available }} copies available</li>
+    <li class="icon-wrap"><i class="icon fas fa-address-book fa-2x"></i>{{ num_authors }} authors</li>
+    </ul>
+</div>
 
 
-<h2>Dynamic content</h2>
+<div class="num-visits"> You have visited this page {{ num_visits }} times. </div>
 
-<p>The library has the following record counts:</p>
-<ul>
-<li><strong>Books:</strong> {{ num_books }}</li>
-<li><strong>Copies:</strong> {{ num_instances }}</li>
-<li><strong>Copies available:</strong> {{ num_instances_available }}</li>
-<li><strong>Authors:</strong> {{ num_authors }}</li>
-</ul>
-
-
-You have visited this page {{ num_visits }} times.
 
 {% endblock %}

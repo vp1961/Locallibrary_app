@@ -10,8 +10,8 @@
 
 <dl>
 {% for book in author.book_set.all %}
-  <dt><a href="{% url 'book-detail' book.pk %}">{{book}}</a> ({{book.bookinstance_set.all.count}})</dt>
-  <dd>{{book.summary}}</dd>
+  <dt><a href="{% url 'book-detail' book.pk %}" class="for-link">{{book}}</a> ({{book.bookinstance_set.all.count}})</dt>
+  <dd class="table-content">{{book.summary}}</dd>
 {% endfor %}
 </dl>
 
